@@ -1,0 +1,174 @@
+As funções abaixo devem ser criadas dentro dos arquivos da pasta services.
+
+Fase 1 - Funções dentro do arquivo UsuariosServices.js:
+
+    Função listar:
+
+        Objetivo: Exibir uma tabela somente com index, id, nome e email do usuário
+        Essa função não deve receber nenhum parâmetro
+        Essa função não retorna nada
+        
+    
+    Função salvar:
+
+        Objetivo: Essa função deve salvar um array de usuários no arquivo databases/usuarios.json
+        Essa função não será exportada.
+        Essa função recebe um array de usuários como parâmetro
+        Essa função não retorna nada
+
+    
+    Função cadastrar:
+
+        Objetivo: Essa função deve receber dados de um usuário e registrar um novo usuário no array presente no arquivo usuarios.json. O objeto contendo os dados do usuário devem seguir o seguinte modelo.
+        {
+            nome: "Nome do Usuário",
+            email: "email@dousuario.com"
+            senha: "senha_do_usuario_sem_criptografar"
+            endereco: "Rua dos usuários, nº 256. Usuariolândia-BA"
+        }
+        
+        O objeto à ser salvo no arquivo deverá seguir o seguinte modelo
+        {
+            id: 22
+            nome: "Nome do Usuário",
+            email: "email@dousuario.com"
+            senha: "$2b$10$/DyrZvGhcHHQ4PgSKgDhtexKiNTl3QKnYpLPI.pl1gv4VFtQHFvKy"
+            enderecos: ["Rua dos usuários, nº 256. Usuariolândia-BA"],
+            formasDePagamento: []
+        }
+
+        Essa função deve receber um objeto seguindo o modelo de parâmetro
+        Essa função não deve retornar nada
+        O id do novo usuário deve ser único.
+        A senha do usuário deve ser armazenada criptografada.
+
+
+
+    Função detalhar:
+
+        Objetivo: Essa função deve mostrar detalhes de um determinado usuário.
+        Os detalhes devem ser exibidos desta forma;
+        
+        Nome: Nome do Usuário
+        E-mail: email@do-usuario.com
+
+        Endereços
+        ┌─────────┬───────────────────────┐
+        │ (index) │        Values         │
+        ├─────────┼───────────────────────┤
+        │    0    │ 'Rua benevides, 33'   │
+        │    1    │ 'Av das Palmas, 123'  │
+        └─────────┴───────────────────────┘
+        
+        Formas de Pagamento
+        ┌─────────┬───────────────────────┐
+        │ (index) │        Values         │
+        ├─────────┼───────────────────────┤
+        │    0    │ '1234 1234 1234 1234' │
+        │    1    │ '1234 1234 1234 1236' │
+        └─────────┴───────────────────────┘
+        
+        Essa função deve receber o id de um usuário.
+        Ela não deve retornar nada.
+
+
+    
+    Função remover:
+        
+        Objetivo: A função deve remover um usuário do arquivo usuarios.json a partir do seu id.
+        Essa função deve receber o id de um usuário.
+        Ela não deve retornar nada.
+
+    
+    Função alterar:
+
+        Objetivo: A função deve alterar os dados de pessoais de um usuário (nome, email e senha).
+        Ela recebe dois parâmetros.
+        O primeiro, um objeto no seguinte formato
+        {
+            nome: "Novo Nome do Usuário da Silva",
+            email: "novo@email-do-usuario.com",
+            senha: "nova-senha-sem-criptografar"
+        }
+        O segundo, o id do usuário que terá seus dados alterados.
+        A senha deve ser armazenada criptografada.
+        Essa função não retorna nada
+
+    
+    Função addEndereco:
+
+        Objetivo: A função deve adicionar um novo endereço no array de endereços do usuário e atualizar o arquivo usuarios.json
+        Essa função recebe dois parametros.
+        O primeiro, uma string contendo um novo endereço.
+        O segundo, o id do usuário que terá adicionado o novo endereço.
+        Essa função não retorna nada.
+
+
+    Função removerEndereco:
+    
+        Objetivo: A função deve remover o endereço especificado de um usuário.
+        Essa função deve receber dois parâmetros.
+        O primeiro, a posicao do endereço no array de endereços do usuário
+        O segundo, o id do usuário que terá o endereço removido
+        Essa função não retorna nada.
+
+    
+    Função alterarEndereco:
+        
+        Objetivo: A função deve alterar um endereço de um usuário.
+        Essa função deve receber três parâmetros.
+        O primeiro, a posicao do endereco no array de enderecos do usuário
+        O segundo, uma string contendo o novo endereço.
+        O terceiro, o id do usuário que terá um endereço alterado
+
+
+    Função addFormaDePagamento:
+
+        Objetivo: A função deve adicionar uma nova forma de pagamento no array de formasDePagamento do usuário e atualizar o arquivo usuarios.json
+        Essa função recebe dois parametros.
+        O primeiro, uma string contendo a nova forma de pagamento.
+        O segundo, o id do usuário que terá adicionada a nova forma de pagamento.
+        Essa função não retorna nada.
+
+
+    Função removerFormaDePagamento:
+    
+        Objetivo: A função deve remover a forma de pagamento especificada de um usuário.
+        Essa função deve receber dois parâmetros.
+        O primeiro, a posicao da forma de pagamento no array de formas de pagamento do usuário
+        O segundo, o id do usuário que terá o array removido
+        Essa função não retorna nada.
+        
+    
+    Função alterarFormaDePagamento:
+        
+        Objetivo: A função deve alterar uma forma de pagamento de um usuário.
+        Essa função deve receber três parâmetros.
+        O primeiro, a posicao da forma de pagamento no array de formas de pagamentos do usuário
+        O segundo, uma string contendo a nova forma de pagamento.
+        O terceiro, o id do usuário que terá a forma de pagamento alterada.
+
+
+
+Fase 2 - Funções dentro do arquivo PizzasServices.js:
+    
+    Função listar:
+    Função adicionar:
+    Função remover:
+    Função alterar:
+    Função adicionarIngrediente:
+    Função removerIngrediente:
+    Função alterarIngrediente:
+
+Fase 3 - Funções dentro do arquivo PedidosServices.js:
+    Função listar:
+    Função cadastrar:
+    Função alterarUsuario:
+    Função adicionarPizza:
+    Função removerPizza:
+    Função marcarComoEntregue:
+    
+            
+    
+
+    
