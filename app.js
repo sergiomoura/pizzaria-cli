@@ -1,16 +1,22 @@
 // 1 - Importar o express
 const express = require('express');
+const path = require('path');
 
 // 2 - Criar o servidor
 const servidor = express();
 
+// Define a pasta public como sendo a pasta arquivos estáticos
+servidor.use(express.static(path.join(__dirname, 'public')))
+
 // 3 - Definir de uma rota neste servidor
 // endereço, método, função callback (a ação que o servidor vai realizar quando req chegar)
-servidor.get('/usuarios', (req, res)=>{
-    console.log("chegou uma requisição!");
-    // return res.send("Permaneça em linha!...");
+servidor.get('/', (req, res)=>{
     return res.sendFile(__dirname + "/views/index.html");
 });
+
+servidor.get('/carrinho',(req, res)=>{
+    return res.sendFile(__dirname + "/views/carrinho.html");
+})
 
 
 
