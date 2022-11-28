@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+
+body {
+    background-color: gray;
+    height: 100%;
+}
+
+header {
+    border: 3px dotted red;
+}
+
+button, .input-file-container {
+    background-color: #ff5100;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+button:hover, .input-file-container:hover{
+    background-color: black;
+}
+
+.btBuscar {
+    width: 300px;
+}
+
+#logo {
+    width: 64px;
+    height: 64px;
+}
+
+article > img {
+    width: 300px;
+}
+
+.input-file-container {
+    background-color: #ff5100;
+}
+
+input[type="file"] {
+    display: none;
+}

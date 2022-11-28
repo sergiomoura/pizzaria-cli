@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pizzaria Fantástica</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/90a414e190.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/css/geral.css">
+</head>
+<body>
+
+    <link rel="stylesheet" href="/css/form-usuario.css">
+	
+	<form id="form-usuario" method="POST" action="" enctype="multipart/form-data">
+		<label class="input-file-container">
+			Clique para escolher uma imagem
+			<input type="file" name="img" id="img">
+		</label>
+		
+		<div class="campos">
+			<label>
+				Nome:
+				<input type="text" name="nome" id="nome" placeholder="Digite o nome do usuário" value="Renato Aragão">
+			</label>
+		
+			<label>
+				E-mail:
+				<input type="email" name="email" id="email" placeholder="Digite e-mail do usuário" value="didi@trapalhoes.com">
+			</label>
+		
+			<label>
+				Senha:
+				<input type="password" name="senha" id="senha" placeholder="Digite a senha">
+			</label>
+		
+			<label>
+				Confirme a Senha:
+				<input type="password" name="conf" id="conf" placeholder="Confirme a senha do usuário">
+			</label>
+
+			<button type="submit">Salvar</button>
+		</div>
+	</form>
+
+</body>
+</html>
