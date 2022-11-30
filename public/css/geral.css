@@ -1,19 +1,56 @@
+/* Reset CSS */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 html {
     height: 100%;
 }
 
 body {
     background-color: gray;
-    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body::before{
+	content: "";
+	position: fixed;
+	top: 0;	left: 0;
+	width: 100%; height: 100%;
+	background-image: url(/img/bg.jpeg);
+	filter: brightness(0.3);
+	background-size: cover;
+	z-index: -1;
 }
 
 header {
-    border: 3px dotted red;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: stretch;
+    padding: 10px;
+    height: 80px;
+    gap: 5px;
+}
+
+header input {
+    font-size: 1.5rem;
+    border-style: none;
+    padding: 10px;
+    width: 600px;
+    flex-grow: 1;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header span {
+    color: #fff;
+    background-color:#ff5100;
+    border-radius: 50%;
+    padding: 3px 9px;
 }
 
 button, .input-file-container {
@@ -32,11 +69,16 @@ button:hover, .input-file-container:hover{
 
 .btBuscar {
     width: 300px;
+    font-size: 1.5rem;
 }
 
 #logo {
-    width: 64px;
     height: 64px;
+    width: 64px;
+}
+
+.btBuscar {
+    width: 300px;
 }
 
 article > img {
