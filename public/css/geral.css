@@ -32,6 +32,11 @@ header {
     padding: 10px;
     height: 80px;
     gap: 5px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 header input {
@@ -92,7 +97,6 @@ article > img {
 input[type="file"] {
     display: none;
 }
-
 
 @media screen and (max-width: 550px) {
     .btBuscar {
