@@ -92,3 +92,10 @@ article > img {
 input[type="file"] {
     display: none;
 }
+
+
+@media screen and (max-width: 550px) {
+    .btBuscar {
+        display: none;
+    }
+}
