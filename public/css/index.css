@@ -11,6 +11,12 @@ main article{
     position: relative;
 }
 
+main article:hover a,
+main article:hover button
+{
+    opacity: 1;
+}
+
 main article h2 {
     position: absolute;
     left: 0;
@@ -36,6 +42,8 @@ main article a {
     bottom: 20px;
     text-decoration: none;
     color: #FFF;
+    opacity: 0;
+    transition: opacity 300ms;
 }
 
 main article button {
@@ -43,6 +51,8 @@ main article button {
     position: absolute;
     right: 0;
     bottom: 20px;
+    opacity: 0;
+    transition: opacity 300ms;
 }
 
 main article img {
