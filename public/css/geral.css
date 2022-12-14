@@ -13,7 +13,6 @@ html {
 
 body {
     background-color: gray;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body::before{
@@ -99,6 +98,16 @@ article > img {
 input[type="file"] {
     display: none;
 }
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"]
+{
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
 
 @media screen and (max-width: 550px) {
     .btBuscar {
