@@ -205,19 +205,36 @@ function showPizza(pizza){
 
 function showPizzas(pizzas){
 
+    // Limpando o elemento main
+    main.innerHTML = '';
+
     // Forma 1: Elegante, linda e gatinha
     pizzas.forEach(showPizza);
 
-    // Forma 2: Bonitinha
-    for (const pizza of pizzas) {
-        showPizza(pizza);
-    }
-
-    // Forma 3: Feia
-    for (let i = 0; i < pizzas.length; i++) {
-        showPizza(pizzas[i]);
-    }
 }
 
 showPizzas(pizzas);
+
+function onCampoDeBuscaKeyup(){
+    
+    // Capturar o trecho buscado pelo usuário
+    const trechoBuscado = campoDeBusca.value;
+
+    // Criar um array com as pizzas filtradas
+    const pizzasFiltradas = filtrarPizzas(pizzas, trechoBuscado);
+
+    // Mostrar as pizzas filtradas
+    showPizzas(pizzasFiltradas);
+
+}
+
+function filtrarPizzas(pizzas, trechoBuscado){
+    let pizzasFiltradas = pizzas.filter(
+        pizza => pizza.nome.toUpperCase().includes(trechoBuscado.toUpperCase())
+    );
+    return pizzasFiltradas;
+}
+
+// Associando a execução de uma função a um evento
+campoDeBusca.addEventListener('keyup', onCampoDeBuscaKeyup);
 
