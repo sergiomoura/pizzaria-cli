@@ -1,6 +1,7 @@
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     padding: 10px;
     position: relative;
@@ -9,7 +10,12 @@ main {
 
 main article{
     position: relative;
-    min-height: 300px;
+}
+
+main article::before{
+    content: "";
+    padding-bottom: 100%;
+    display: block;
 }
 
 main article:hover a,
@@ -62,11 +68,7 @@ main article img {
     height: 100%;
     display: block;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
-@media screen and (max-width: 720px){
-    main {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
