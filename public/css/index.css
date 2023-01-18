@@ -9,6 +9,7 @@ main {
 
 main article{
     position: relative;
+    min-height: 300px;
 }
 
 main article:hover a,
@@ -58,7 +59,9 @@ main article button {
 
 main article img {
     width: 100%;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 720px){
