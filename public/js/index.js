@@ -1,14 +1,7 @@
 // FORMAS DE SELECIONAR ELEMENTOS DA PÁGINA
-let campoDeBusca = document.getElementById("campo-de-busca");
-
-/**
- * querySelector:
- * document.querySelector("#seletor .css");
- */
-let btBuscar = document.querySelector(".btBuscar");
-
-// Capturem o elemento main (pai de todos os articles)
-let main = document.querySelector("main");
+const campoDeBusca = document.getElementById("campo-de-busca");
+const btBuscar = document.querySelector(".btBuscar");
+const main = document.querySelector("main");
 
 let pizzas = [
     {
@@ -189,6 +182,7 @@ let pizzas = [
     }
 ]
 
+// FUNÇÕES QUE MANIPULAM A DOM - - - - - - - -
 function showPizza(pizza){
     let article = document.createElement("article");
 
@@ -213,8 +207,15 @@ function showPizzas(pizzas){
 
 }
 
-showPizzas(pizzas);
+// FUNÇÕES AUXILIARES -------------------------
+function filtrarPizzas(pizzas, trechoBuscado){
+    let pizzasFiltradas = pizzas.filter(
+        pizza => pizza.nome.toUpperCase().includes(trechoBuscado.toUpperCase())
+    );
+    return pizzasFiltradas;
+}
 
+// FUNÇÕES DE ASSOCIAÇÃO DE EVENTOS------------
 function onCampoDeBuscaKeyup(){
     
     // Capturar o trecho buscado pelo usuário
@@ -228,13 +229,7 @@ function onCampoDeBuscaKeyup(){
 
 }
 
-function filtrarPizzas(pizzas, trechoBuscado){
-    let pizzasFiltradas = pizzas.filter(
-        pizza => pizza.nome.toUpperCase().includes(trechoBuscado.toUpperCase())
-    );
-    return pizzasFiltradas;
-}
-
-// Associando a execução de uma função a um evento
+// COMANDOS DE INICIALIZAÇÃO DA PÁGINA --------
 campoDeBusca.addEventListener('keyup', onCampoDeBuscaKeyup);
+showPizzas(pizzas);
 
