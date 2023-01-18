@@ -1,16 +1,4 @@
-// FORMAS DE SELECIONAR ELEMENTOS DA PÁGINA
-let campoDeBusca = document.getElementById("campo-de-busca");
-
-/**
- * querySelector:
- * document.querySelector("#seletor .css");
- */
-let btBuscar = document.querySelector(".btBuscar");
-
-// Capturem o elemento main (pai de todos os articles)
-let main = document.querySelector("main");
-
-let pizzas = [
+const pizzas = [
     {
         "id": 1,
         "nome": "Calabresa",
@@ -187,9 +175,9 @@ let pizzas = [
         "destaque": true,
         "score": 3
     }
-]
+];
 
-function showPizza(pizza){
+function showPizza(pizza, main){
     let article = document.createElement("article");
 
     article.innerHTML = `
@@ -203,21 +191,10 @@ function showPizza(pizza){
     main.appendChild(article);
 }
 
-function showPizzas(pizzas){
-
-    // Forma 1: Elegante, linda e gatinha
-    pizzas.forEach(showPizza);
-
-    // Forma 2: Bonitinha
-    for (const pizza of pizzas) {
-        showPizza(pizza);
-    }
-
-    // Forma 3: Feia
-    for (let i = 0; i < pizzas.length; i++) {
-        showPizza(pizzas[i]);
-    }
+function showPizzas(pizzas, main){
+    pizzas.forEach(pizza => {
+        showPizza(pizza, main)
+    });
 }
 
-showPizzas(pizzas);
-
+export {pizzas, showPizza, showPizzas}
