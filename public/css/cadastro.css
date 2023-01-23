@@ -1,0 +1,14 @@
+main {
+    position: relative;
+    top: 90px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+main > form {
+    width: 600px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 40px;
+    filter: blur(0.8);
+}

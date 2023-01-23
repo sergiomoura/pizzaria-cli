@@ -22,5 +22,9 @@ servidor.get('/perfil', (req, res)=>{
     return res.sendFile(__dirname + "/views/perfil.html");
 });
 
+servidor.get('/cadastro', (req, res)=>{
+    return res.sendFile(__dirname + "/views/cadastro.html");
+});
+
 // 4 - Por o servidor no modo "aguardando requisição"
 servidor.listen(3000);

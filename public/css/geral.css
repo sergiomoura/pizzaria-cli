@@ -108,6 +108,27 @@ form input[type="number"]
     font-size: 1.2rem;
 }
 
+form input:invalid{
+    border: 3px solid crimson;
+}
+
+form input:valid{
+    border: 3px solid greenyellow;
+}
+
+form input:invalid + .error-msg{
+    display: block;
+}
+
+form .error-msg{
+    color: crimson;
+    font-size: 14px;
+    display: none;
+}
+
+form div::after{
+    content: "allll";
+}
 
 @media screen and (max-width: 550px) {
     .btBuscar {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Fantástica</title>
+    <link rel="stylesheet" href="/css/geral.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+<body>
+    <header>
+        <a href="/">
+            <img src="/img/logo.svg" alt="Logo da Pizzaria Fantástica" width="64" height="64">
+        </a>
+        <input type="text" name="" id="campo-de-busca" placeholder="Qual pizza você procura?">
+        <button class="btBuscar">Buscar</button>
+        <a href="/carrinho">
+            <img src="" alt="">
+            <span>0</span>
+        </a>
+        <a href="">
+            <img src="" alt="">
+        </a>
+    </header>
+
+    <main>
+        <form>
+            <div>
+                <label for="nome">Nome:</label>
+                <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    placeholder="Digite o seu nome completo sem abreviação.">
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="cep">CEP:</label>
+                <input
+                    type="text"
+                    name="cep"
+                    id="cep"
+                    pattern="^[0-9]{5}-[0-9]{3}$"
+                    required>
+                <span class="error-msg">Preencha o CEP corretamente</span>
+            </div>
+            <div>
+                <label for="cep">CPF:</label>
+                <input
+                    type="text"
+                    name="cpf"
+                    id="cpf"
+                    pattern="^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$"
+                    required>
+                <span class="error-msg">Preencha o CEP corretamente</span>
+            </div>
+            <div class="controles">
+                <button type="reset">Resetar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
