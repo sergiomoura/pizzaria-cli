@@ -126,10 +126,6 @@ form .error-msg{
     display: none;
 }
 
-form div::after{
-    content: "allll";
-}
-
 @media screen and (max-width: 550px) {
     .btBuscar {
         display: none;
