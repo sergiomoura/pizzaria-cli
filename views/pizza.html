@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/geral.css">
-        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/pizza.css">
         <title>Pizzaria Fantástica</title>
     </head>
 
@@ -26,9 +26,19 @@
                 <img src="" alt="">
             </a>
         </header>
-        <main></main>
+        <main>
+            <h1>Quatro Queijos</h1>
+            <h2>R$ 9,90</h2>
+            <img src="/img/quatroqueijos.jpg" alt="Quatro Queijos">
+            <div>Ingredientes: Queijo 1, queijo 2, queijo 3 e queijo 4</div>
+            <form action="/pizzas/addCart" method="post">
+                <input type="hidden" name="aEscolhida" value="<%= pizza.id %>">
+                <button>+ Add</button>
+            </form>
+            <a href="/pizzas/1" class="prev">&lt;</a>
+            <a href="/pizzas/3 %>" class="next">&gt;</a>
+        </main>
         
-        <script src="/js/index.js"></script>
         
     </body>
 

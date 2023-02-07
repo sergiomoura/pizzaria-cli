@@ -13,6 +13,7 @@ html {
 
 body {
     background-color: gray;
+    color: #FFF;
 }
 
 body::before{

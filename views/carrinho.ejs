@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('parts/head.ejs', {css: ['geral.css', 'carrinho.css']}) %>
+    <body>
+        <link rel="stylesheet" href="/css/carrinho.css">
+        <%- include("parts/header.ejs") %>
+        <h2>Carrinho de <%= nomeDoUsuario %></h2>
+        <ul>
+            <% for (const pizza of carrinho) {  %>
+                <li><%= pizza.nome %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>
