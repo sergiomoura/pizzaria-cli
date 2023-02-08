@@ -7,9 +7,9 @@ main {
 main h1 {
 	position: absolute;
 	right: 0;
-	top:50;
+	top:15px;
 	color: #FFF;
-	background-color: var(--cor-primaria);
+	background-color: #000;
 	padding: 10px 20px;
 	margin: 0;
 }
@@ -17,9 +17,9 @@ main h1 {
 main h2 {
 	position: absolute;
 	right: 0;
-	top:55px;
-	color: #FFF;
-	background-color: #000;
+	top:65px;
+	color: #000;
+	background-color: #FFF;
 	padding: 5px 5px;
 	margin: 0;
 }
@@ -33,7 +33,6 @@ main img{
 
 main button{
 	display: block;
-	background-color: var(--cor-primaria);
 	border: none;
 	color: white;
 	padding: 10px 20px;
