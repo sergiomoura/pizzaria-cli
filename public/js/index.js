@@ -13,7 +13,7 @@ function showPizza(pizza){
         <img src="${pizza.img}" alt="${pizza.nome}">
         <h2>${pizza.nome}</h2>
         <span>${pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
-        <a href="${pizza.id}">Ver mais</a>
+        <a href="/pizzas/${pizza.id}">Ver mais</a>
         <button>Add+</button>
     `;
 
