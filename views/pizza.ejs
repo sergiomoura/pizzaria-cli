@@ -27,16 +27,16 @@
             </a>
         </header>
         <main>
-            <h1>Quatro Queijos</h1>
-            <h2>R$ 9,90</h2>
-            <img src="/img/quatroqueijos.jpg" alt="Quatro Queijos">
-            <div>Ingredientes: Queijo 1, queijo 2, queijo 3 e queijo 4</div>
+            <h1><%= pizza.nome %></h1>
+            <h2><%= pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) %></h2>
+            <img src="<%= pizza.img %>" alt="<%= pizza.nome %>">
+            <div>Ingredientes: <%= pizza.ingredientes.join(', ') %></div>
             <form action="/pizzas/addCart" method="post">
                 <input type="hidden" name="aEscolhida" value="<%= pizza.id %>">
                 <button>+ Add</button>
             </form>
             <a href="/pizzas/1" class="prev">&lt;</a>
-            <a href="/pizzas/3 %>" class="next">&gt;</a>
+            <a href="/pizzas/3" class="next">&gt;</a>
         </main>
         
         

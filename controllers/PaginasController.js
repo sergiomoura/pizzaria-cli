@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const idu = 2;
 
@@ -86,8 +87,7 @@ const PaginasController = {
         const pizza = pizzas.find( p => p.id == id);
 
         // mandar a pizza ser exibida...
-        // return res.send(pizza);
-        return res.sendFile(path.resolve("views/pizza.html"));
+        return res.render('pizza.ejs', {pizza});
     }
 
 }
