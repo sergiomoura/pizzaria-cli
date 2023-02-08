@@ -12,7 +12,7 @@ function showPizza(pizza){
     article.innerHTML = `
         <img src="${pizza.img}" alt="${pizza.nome}">
         <h2>${pizza.nome}</h2>
-        <span>R$ ${pizza.preco}</span>
+        <span>${pizza.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span>
         <a href="${pizza.id}">Ver mais</a>
         <button>Add+</button>
     `;
