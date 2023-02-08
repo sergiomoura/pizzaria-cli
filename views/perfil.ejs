@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('parts/head.ejs', {css: ['geral.css', 'perfil.css']}); %> 
+<body>
+	
+	<form id="form-usuario" method="POST" action="" enctype="multipart/form-data">
+		<label class="input-file-container">
+			Clique para escolher uma imagem
+			<input type="file" name="img" id="img">
+		</label>
+		
+		<div class="campos">
+			<label>
+				Nome:
+				<input type="text" name="nome" id="nome" placeholder="Digite o nome do usuário" value="<%= usuario.nome %>">
+			</label>
+		
+			<label>
+				E-mail:
+				<input type="email" name="email" id="email" placeholder="Digite e-mail do usuário" value="<%= usuario.email %>">
+			</label>
+		
+			<label>
+				Senha:
+				<input type="password" name="senha" id="senha" placeholder="Digite a senha">
+			</label>
+		
+			<label>
+				Confirme a Senha:
+				<input type="password" name="conf" id="conf" placeholder="Confirme a senha do usuário">
+			</label>
+
+			<button type="submit">Salvar</button>
+		</div>
+	</form>
+	
+	<script defer src="/js/perfil.js"></script>
+</body>
+</html>

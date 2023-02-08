@@ -1,4 +1,5 @@
 const path = require('path');
+const idu = 2;
 
 const PaginasController = {
 
@@ -54,7 +55,21 @@ const PaginasController = {
     },
 
     showPerfil: (req, res)=>{
-        return res.sendFile(path.resolve("views/perfil.html"));
+
+        // importar o array de usuarios
+        const usuarios = require('../databases/usuarios.json');
+
+        // encontrar o usuario com o id dado
+        const usuario = usuarios.find(u => u.id == idu);
+
+        if(usuario !== undefined){
+            // caso encontre, passar usuario para view perfil.ejs
+            return res.render('perfil.ejs', {usuario});
+        } else {
+            // caso não encontre, mando uma view erro-404.ejs
+            return res.render('erro-404.ejs');
+        }
+        
     },
 
     showCadastro: (req, res)=>{
