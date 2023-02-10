@@ -156,6 +156,7 @@ Fase 2 - Funções dentro do arquivo PizzasServices.js:
     Função adicionar:
     Função remover:
     Função alterar:
+    Função carregar:
     Função adicionarIngrediente:
     Função removerIngrediente:
     Função alterarIngrediente:
