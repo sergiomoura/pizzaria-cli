@@ -150,6 +150,12 @@
     },
     {
         "id": 55,
-        "nome": "Pizza de Jaca"
+        "nome": "Maravilhosa Pizza de Jaca",
+        "ingredientes": [
+            "quejo",
+            "jaca"
+        ],
+        "preco": 80,
+        "destaque": false
     }
 ]

@@ -22,11 +22,6 @@ function adicionarPizza(pizza){
     salvar();
 }
 
-function salvar(){
-    const caminhoParaArquivo = path.resolve(__dirname + "/../databases/pizzas.json");
-    fs.writeFileSync(caminhoParaArquivo, JSON.stringify(pizzas, null, 4));
-}
-
 function removerPizza(idDaPizza){
     let posicao = pizzas.findIndex(p => p.id == idDaPizza);
     if(posicao == -1){
@@ -36,8 +31,31 @@ function removerPizza(idDaPizza){
     salvar();
 }
 
-try {
-    removerPizza(8);
-} catch (e) {
-    console.log("Pizza inexistente");
+function alterarPizza(idDaPizza, dadosDaPizza){
+    let pizza = pizzas.find(p => p.id == idDaPizza);
+    if(pizza == undefined){
+        throw new Error("Pizza inexistente");
+    }
+
+    pizza.nome = dadosDaPizza.nome;
+    pizza.ingredientes = dadosDaPizza.ingredientes;
+    pizza.preco = dadosDaPizza.preco;
+    pizza.destaque = dadosDaPizza.destaque;
+
+    salvar();
+
 }
+
+function salvar(){
+    const caminhoParaArquivo = path.resolve(__dirname + "/../databases/pizzas.json");
+    fs.writeFileSync(caminhoParaArquivo, JSON.stringify(pizzas, null, 4));
+}
+
+const PizzasServices = {
+    carregarPizza,
+    carregarPizzas,
+    adicionarPizza,
+    removerPizza,
+    alterarPizza
+}
+module.exports = PizzasServices;
