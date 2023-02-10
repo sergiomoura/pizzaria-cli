@@ -26,20 +26,6 @@
         "score": 24
     },
     {
-        "id": 3,
-        "nome": "Fracatu",
-        "ingredientes": [
-            "mussarela",
-            "frango",
-            "catupiry",
-            "cebola"
-        ],
-        "preco": 38.5,
-        "img": "/img/fracatu.jpg",
-        "destaque": true,
-        "score": 12
-    },
-    {
         "id": 4,
         "nome": "Marguerita",
         "ingredientes": [
@@ -94,19 +80,6 @@
         "img": "/img/quatroqueijos.jpg",
         "destaque": true,
         "score": 3
-    },
-    {
-        "id": 8,
-        "nome": "Caipira",
-        "ingredientes": [
-            "mussarela",
-            "milho verde",
-            "frango"
-        ],
-        "preco": 38.5,
-        "img": "/img/quatroqueijos.jpg",
-        "destaque": true,
-        "score": 2
     },
     {
         "id": 9,

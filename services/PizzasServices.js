@@ -26,3 +26,18 @@ function salvar(){
     const caminhoParaArquivo = path.resolve(__dirname + "/../databases/pizzas.json");
     fs.writeFileSync(caminhoParaArquivo, JSON.stringify(pizzas, null, 4));
 }
+
+function removerPizza(idDaPizza){
+    let posicao = pizzas.findIndex(p => p.id == idDaPizza);
+    if(posicao == -1){
+        throw new Error("Pizza inexistente");
+    }
+    pizzas.splice(posicao, 1);
+    salvar();
+}
+
+try {
+    removerPizza(8);
+} catch (e) {
+    console.log("Pizza inexistente");
+}
