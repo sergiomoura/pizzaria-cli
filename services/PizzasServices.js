@@ -2,10 +2,20 @@ const pizzas = require('../databases/pizzas.json');
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Retorna um array com todas as pizzas gravadas.
+ * @returns {Pizza[]}
+ */
 function carregarPizzas(){
     return pizzas;
 };
 
+/**
+ * Retorna a pizza de id passado pelo parâmetro idPizza
+ * @param {number} idDaPizza 
+ * @returns {Pizza} 
+ * @throws Emite erro caso não encontre nenhuma pizza com o id dado
+ */
 function carregarPizza(idDaPizza){
     let pizza = pizzas.find(p => p.id == idDaPizza);
     if(pizza == undefined){
@@ -14,6 +24,10 @@ function carregarPizza(idDaPizza){
     return pizza;
 }
 
+/**
+ * Adiciona uma pizza.
+ * @param {Pizza} pizza 
+ */
 function adicionarPizza(pizza){
     // Adicionar pizza ao array de pizzas
     pizzas.push(pizza);
@@ -22,6 +36,11 @@ function adicionarPizza(pizza){
     salvar();
 }
 
+/**
+ * Remove uma pizza.
+ * @param {number} idDaPizza
+ * @throws Emite erro caso não exista pizza com o id passado
+ */
 function removerPizza(idDaPizza){
     let posicao = pizzas.findIndex(p => p.id == idDaPizza);
     if(posicao == -1){
@@ -31,6 +50,11 @@ function removerPizza(idDaPizza){
     salvar();
 }
 
+/**
+ * Altera as informações de uma pizza
+ * @param {number} idDaPizza 
+ * @param {{nome: string, ingredientes:string[], preco:number, destaque: boolean}} dadosDaPizza 
+ */
 function alterarPizza(idDaPizza, dadosDaPizza){
     let pizza = pizzas.find(p => p.id == idDaPizza);
     if(pizza == undefined){
