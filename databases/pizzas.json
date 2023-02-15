@@ -157,5 +157,10 @@
         ],
         "preco": 80,
         "destaque": false
+    },
+    {
+        "nome": "Adamantium",
+        "preco": 1000,
+        "ingredientes": "Mussarela, Adamantium"
     }
 ]
