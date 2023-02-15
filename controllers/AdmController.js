@@ -34,6 +34,14 @@ const AdmController = {
         PizzasServices.adicionarPizza(pizza);
 
         res.redirect('/adm/pizzas');
+    },
+    showEditPizza: (req, res) => {
+        // Capiturar o id da pizza a ser editada (req.params)
+
+        // Encontrar a pizza a ser editada guardando na variavel pizza (PizzasServices.carregarPizza)
+
+        // Renderizar a view (ainda inexistente) form-edit-pizza.ejs
+        // passando para essa view (res.render(____, {pizza}))
     }
 
 }

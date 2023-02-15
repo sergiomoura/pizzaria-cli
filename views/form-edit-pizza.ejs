@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa - Pizzaria Fantástica</title>
+    <link rel="stylesheet" href="/css/geral.css">
+    <style>
+        .nav-adm {
+            background-color: rgba(0,0,0,0.5);
+            filter: blur(0.5);
+        }
+
+        .nav-adm ul{
+            margin: 0 auto;
+            padding: 0;
+            width: 960px;
+            display: flex;
+        }
+
+        .nav-adm ul li{
+            display: block;
+        }
+
+        .nav-adm ul li a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #FFF;
+            font-size: 1.2rem;
+        }
+
+        .nav-adm ul li.selected a{
+            background-color: #333333;
+            cursor: default;
+        }
+
+        .nav-adm ul li:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        main {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.5);
+            filter: blur(0.5);
+        }
+
+        label {
+            margin-bottom: 12px;
+            display: block;
+            font-size: 12px;
+        }
+
+        label input {
+            display: block;
+            width: 100%;
+        }
+
+        label img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-adm">
+        <ul>
+            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Clientes</a></li>
+            <li class="selected"><a href="#">Pizzas</a></li>
+            <li><a href="#">Usuarios</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="/adm/pizzas/store" method="post">
+            <label>
+                Nome:
+                <input value="<%= pizza.nome %>" type="text" name="nome" id="nome" placeholder="Digite o nome da pizza">
+            </label>
+    
+            <label>
+                Ingredientes:
+                <input type="text" name="ingredientes" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
+            </label>
+    
+            <label>
+                Preço:
+                <input type="number" name="preco" id="preco" step="0.01" placeholder="Digite o preço da pizza">
+            </label>
+    
+            <label>
+                Foto:
+                <img src="/img/no-image.png">
+                <div>Clique para selecione nova imagem</div>
+                <input type="file" name="img" id="img">
+            </label>
+    
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
