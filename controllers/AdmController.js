@@ -12,20 +12,28 @@ const AdmController = {
         res.render('form-add-pizza.ejs');
     },
     gravarPizza: (req, res) => {
-        // req.body: carregando as info digitadas pelo usuário
 
-        // Criar um objeto pizza
+        // Quando o form é post os dados ficam no req.body
+        // console.log(req.body)
+
+        // Quando o form é get os dados ficam no req.query
+        // console.log(req.query);
+
+        // As informações podem vir como parâmetro de rota...
+        // console.log(req.params)
+
         let pizza = {
             nome: req.body.nome,
+            ingredientes: req.body.ingredientes.split(',').map(e => e.trim()),
             preco: Number(req.body.preco),
-            ingredientes: req.body.ingredientes
+            img: "/img/no-image.png",
+            destaque: false,
+            score: 0
         }
 
-        // Salvar esse objeto no array de pizzas
-        PizzasServices.adicionarPizza(pizza)
+        PizzasServices.adicionarPizza(pizza);
 
-        // Redirecionar o usuário para a lista de pizzas
-        res.redirect('/adm/pizzas'); //
+        res.redirect('/adm/pizzas');
     }
 
 }

@@ -149,18 +149,29 @@
         "score": 3
     },
     {
-        "id": 55,
-        "nome": "Maravilhosa Pizza de Jaca",
+        "nome": "Tamarindo",
         "ingredientes": [
-            "quejo",
-            "jaca"
+            "tamarindo",
+            "mussarela",
+            "coragem"
         ],
-        "preco": 80,
-        "destaque": false
+        "preco": 50,
+        "img": "/img/no-image.png",
+        "destaque": false,
+        "score": 0,
+        "id": 14
     },
     {
-        "nome": "Adamantium",
-        "preco": 1000,
-        "ingredientes": "Mussarela, Adamantium"
+        "nome": "Robalo",
+        "ingredientes": [
+            "robalo",
+            "molho de tomate",
+            "fermento"
+        ],
+        "preco": 500,
+        "img": "/img/no-image.png",
+        "destaque": false,
+        "score": 0,
+        "id": 15
     }
 ]
