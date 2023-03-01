@@ -1,4 +1,5 @@
 const PizzasServices = require("../services/PizzasServices");
+const fs = require('fs');
 
 const AdmController = {
     listarPizzas: (req, res) =>{
@@ -12,21 +13,15 @@ const AdmController = {
         res.render('form-add-pizza.ejs');
     },
     gravarPizza: (req, res) => {
-
-        // Quando o form é post os dados ficam no req.body
-        // console.log(req.body)
-
-        // Quando o form é get os dados ficam no req.query
-        // console.log(req.query);
-
-        // As informações podem vir como parâmetro de rota...
-        // console.log(req.params)
+        let novoNome = req.body.nome.replace(' ', '-').toLowerCase() + '.jpg';
+        // let novoNome = `${Date.now()}-${req.file.originalname}`
+        fs.renameSync(req.file.path, `public/img/${novoNome}`)
 
         let pizza = {
             nome: req.body.nome,
             ingredientes: req.body.ingredientes.split(',').map(e => e.trim()),
             preco: Number(req.body.preco),
-            img: "/img/no-image.png",
+            img: `/img/${novoNome}`,
             destaque: false,
             score: 0
         }

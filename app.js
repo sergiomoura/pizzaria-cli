@@ -15,7 +15,7 @@ servidor.use(express.urlencoded({ extended: false }));
 
 // Configurando middlewares
 servidor.use(registraRequisicao);
-servidor.use(bloqueiaForaDeHora);
+// servidor.use(bloqueiaForaDeHora);
 
 // 3 - Definir roteador a ser utilizado
 servidor.use(router);

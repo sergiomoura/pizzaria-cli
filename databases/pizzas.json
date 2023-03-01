@@ -173,5 +173,17 @@
         "destaque": false,
         "score": 0,
         "id": 15
+    },
+    {
+        "nome": "Sorte",
+        "ingredientes": [
+            "trevo de quatro folhas",
+            "pé de coelho"
+        ],
+        "preco": 900,
+        "img": "/img/1677677393105-capa-capitao-cueca-colorido.png",
+        "destaque": false,
+        "score": 0,
+        "id": 20
     }
 ]
