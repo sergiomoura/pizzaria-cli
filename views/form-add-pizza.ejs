@@ -100,24 +100,14 @@
             <button type="submit">Salvar</button>
         </form>
     </main>
-    <script>
+    <script type="module">
+        
         const elementoImg = document.getElementById('imagem-da-pizza');
         const campoDoArquivo = document.getElementById('img');
 
-        campoDoArquivo.addEventListener('change', onCampoDoArquivoChange);
+        import { mostrarArquivoSelecionadoNoElementoImg } from "/js/mostrarArquivoSelecionadoNoElementoImg.mjs";
+        mostrarArquivoSelecionadoNoElementoImg(campoDoArquivo, elementoImg);
 
-        function onCampoDoArquivoChange(){
-            let arquivo = campoDoArquivo.files[0];
-            mostrarArquivoNoElementoImg(arquivo, elementoImg);
-        }
-
-        function mostrarArquivoNoElementoImg(arquivo, elementoImg){
-            const reader = new FileReader();
-            reader.addEventListener('load',()=>{
-                elementoImg.setAttribute('src', reader.result);
-            })
-            reader.readAsDataURL(arquivo);
-        }
     </script>
 </body>
 </html>
