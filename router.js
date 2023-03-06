@@ -27,5 +27,8 @@ router.get('/adm/pizzas/:id/edit', AdmController.showEditPizza);   // Mostrar fo
 router.post('/adm/pizzas/update', ()=>{}) // Receber info digitadas para alteração de uma pizza
 router.post('/adm/pizzas/delete', ()=>{}) // Receber o id da pizza a ser removida
 
+router.get('/adm/login', AdmController.showLogin);
+router.post('/adm/login', AdmController.login);
+
 // Exportar o roteador
 module.exports = router;

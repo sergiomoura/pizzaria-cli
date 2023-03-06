@@ -37,6 +37,12 @@ const AdmController = {
 
         // Renderizar a view (ainda inexistente) form-edit-pizza.ejs
         // passando para essa view (res.render(____, {pizza}))
+    },
+    showLogin: (req, res) => {
+        res.render('login.ejs');
+    },
+    login: (req, res) => {
+        res.send(req.body);
     }
 
 }

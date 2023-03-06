@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa - Pizzaria Fantástica</title>
+    <link rel="stylesheet" href="/css/geral.css">
+    <style>
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .nav-adm {
+            background-color: rgba(0,0,0,0.5);
+            filter: blur(0.5);
+        }
+
+        .nav-adm ul{
+            margin: 0 auto;
+            padding: 0;
+            width: 960px;
+            display: flex;
+        }
+
+        .nav-adm ul li{
+            display: block;
+        }
+
+        .nav-adm ul li a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #FFF;
+            font-size: 1.2rem;
+        }
+
+        .nav-adm ul li.selected a{
+            background-color: #333333;
+            cursor: default;
+        }
+
+        .nav-adm ul li:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        main {
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0,0,0,0.5);
+            filter: blur(0.5);
+        }
+
+        label {
+            margin-bottom: 12px;
+            display: block;
+            font-size: 12px;
+        }
+
+        label input {
+            display: block;
+            width: 100%;
+        }
+
+        label img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="/adm/login" method="post">
+            <h2>Login - Área Administrativa</h2>
+            <label>
+                E-mail:
+                <input type="text" name="email" id="email" placeholder="Digite o email">
+            </label>
+    
+            <label>
+                Senha:
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+            </label>
+    
+            <button type="submit">Login</button>
+        </form>
+    </main>
+    
+</body>
+</html>
