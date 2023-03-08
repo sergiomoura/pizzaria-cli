@@ -3,5 +3,10 @@
         "nome": "Zico",
         "email": "zico@flamengo.com",
         "senha": "$2b$10$aLgye6UWdHYWVpbzXL1DhePNPr7YYIKsanzQoKwMrRj3mmt7kDO16"
+    },
+    {
+        "nome": "Júnior",
+        "email": "junior@flamengo.com",
+        "senha": "$2b$10$aLgye6UWdHYWVpbzXL1DhePNPr7YYIKsanzQoKwMrRj3mmt7kDO16"
     }
 ]
