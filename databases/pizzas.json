@@ -5,7 +5,8 @@
         "ingredientes": [
             "mussarela",
             "calabresa",
-            "cebola"
+            "cebola",
+            "bacon"
         ],
         "preco": 38.5,
         "img": "/img/calabresa.jpg",
@@ -133,20 +134,6 @@
         "img": "/img/quatroqueijos.jpg",
         "destaque": true,
         "score": 1
-    },
-    {
-        "id": 13,
-        "nome": "Dezoito Queijos",
-        "ingredientes": [
-            "mussarela",
-            "gorgonzola",
-            "provolone",
-            "parmesão"
-        ],
-        "preco": 38.5,
-        "img": "/img/quatroqueijos.jpg",
-        "destaque": true,
-        "score": 3
     },
     {
         "nome": "Sorte",
