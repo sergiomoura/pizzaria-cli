@@ -149,32 +149,6 @@
         "score": 3
     },
     {
-        "nome": "Tamarindo",
-        "ingredientes": [
-            "tamarindo",
-            "mussarela",
-            "coragem"
-        ],
-        "preco": 50,
-        "img": "/img/no-image.png",
-        "destaque": false,
-        "score": 0,
-        "id": 14
-    },
-    {
-        "nome": "Robalo",
-        "ingredientes": [
-            "robalo",
-            "molho de tomate",
-            "fermento"
-        ],
-        "preco": 500,
-        "img": "/img/no-image.png",
-        "destaque": false,
-        "score": 0,
-        "id": 15
-    },
-    {
         "nome": "Sorte",
         "ingredientes": [
             "trevo de quatro folhas",
@@ -185,5 +159,18 @@
         "destaque": false,
         "score": 0,
         "id": 20
+    },
+    {
+        "nome": "Nova Pizza",
+        "ingredientes": [
+            "1",
+            "2",
+            "3"
+        ],
+        "preco": 0,
+        "img": "/img/nova-pizza.jpg",
+        "destaque": false,
+        "score": 0,
+        "id": 21
     }
 ]
