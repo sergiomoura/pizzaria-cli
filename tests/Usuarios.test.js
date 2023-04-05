@@ -1,8 +1,9 @@
 const { Usuarios } = require('../databases/models');
 
 async function teste(){
-    let usuarios = await Usuarios.findAll({raw:true});
-    console.log(usuarios);
+    // let usuario = await Usuarios.findByPk(2, {raw:true, include: "enderecos"});
+    let usuario = await Usuarios.findByPk(2, {include: "enderecos"});
+    console.log(usuario.toJSON());
 }
 
 teste();
