@@ -1,6 +1,7 @@
 const PizzasServices = require("../services/PizzasServices");
 const fs = require('fs');
 const bcrypt = require('bcrypt');
+const { Ingredientes } = require('../databases/models');
 
 const AdmController = {
     listarPizzas: (req, res) =>{
@@ -11,8 +12,9 @@ const AdmController = {
         // Renderizar a view listar-pizzas, passando as pizzas para ela
         res.render('lista-de-pizzas.ejs', {pizzas, msg})
     },
-    criarPizza: (req, res) => {
-        res.render('form-add-pizza.ejs');
+    criarPizza: async (req, res) => {
+        ingredientes = await Ingredientes.findAll();
+        res.render('form-add-pizza.ejs', {ingredientes});
     },
     gravarPizza: (req, res) => {
         let novoNome = req.body.nome.replace(' ', '-').toLowerCase() + '.jpg';

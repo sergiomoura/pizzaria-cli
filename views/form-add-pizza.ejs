@@ -62,6 +62,14 @@
         label img{
             width: 100%;
         }
+        .ingredientes-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .ingredientes-container label {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -79,11 +87,15 @@
                 Nome:
                 <input type="text" name="nome" id="nome" placeholder="Digite o nome da pizza">
             </label>
-    
-            <label>
-                Ingredientes:
-                <input type="text" name="ingredientes" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
-            </label>
+            <div>Ingredientes:</div>
+            <div class="ingredientes-container">
+                <% ingredientes.forEach(ingrediente => { %>
+                    <div>
+                        <input type="checkbox" name="ingredientes" value="<%= ingrediente.id %>" id="id_<%= ingrediente.id %>">
+                        <label for="id_<%= ingrediente.id %>"><%= ingrediente.nome %></label>
+                    </div>
+                <% }) %>
+            </div>
     
             <label>
                 Preço:
