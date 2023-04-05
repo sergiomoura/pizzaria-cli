@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     // 2 - Objeto descrevendo as colunas da tabela que a model vai representar
     // 3 - Um objeto com algumas opções
 
-    return sequelize.define(
+    const Pizzas = sequelize.define(
         'Pizzas', // nome da model
         { // Objeto que descreve as colunas da tabela
             id: {
@@ -42,5 +42,17 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         }
     );
+
+    Pizzas.associate = (models) => {
+        Pizzas.belongsToMany(models.Ingredientes, {
+            as: "ingredientes",
+            through: "pizza_ingredientes",
+            foreignKey: "pizza_id",
+            otherKey: "ingrediente_id",
+            timestamps: false
+        })
+    }
+
+    return Pizzas;
 
 }
