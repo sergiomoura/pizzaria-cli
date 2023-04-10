@@ -4,9 +4,9 @@ const bcrypt = require('bcrypt');
 const { Ingredientes } = require('../databases/models');
 
 const AdmController = {
-    listarPizzas: (req, res) =>{
+    listarPizzas: async (req, res) =>{
         // Carregar as pizzas
-        const pizzas = PizzasServices.carregarPizzas();
+        const pizzas = await PizzasServices.carregarPizzas();
         const msg = req.query.msg;
 
         // Renderizar a view listar-pizzas, passando as pizzas para ela

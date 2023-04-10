@@ -24,7 +24,7 @@ router.get('/api/pizzas', PizzasController.index);
 router.get('/adm/login', AdmController.showLogin);
 router.post('/adm/login', AdmController.login);
 
-router.use('/adm', verificaSeLogado);
+// router.use('/adm', verificaSeLogado);
 router.get('/adm/pizzas', AdmController.listarPizzas); // Mostrar lista as pizzas cadastradas
 router.get('/adm/pizzas/create', AdmController.criarPizza); // Mostrar form para add pizza
 router.post('/adm/pizzas/store', fabricaDeMiddleware.single('img'), AdmController.gravarPizza); // Receber info digitadas para criação de uma pizza
