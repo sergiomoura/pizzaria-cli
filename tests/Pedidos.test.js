@@ -1,8 +1,8 @@
 const {Pedidos, sequelize} = require('../databases/models');
 
 async function teste(){
-    const pedidos = await Pedidos.findAll();
-    console.log(pedidos.map(p=>p.toJSON()));
+    const pedido = await Pedidos.findByPk(5, {include:'pizzas'});
+    console.log(pedido.toJSON());
     sequelize.close();
 }
 

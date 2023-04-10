@@ -38,6 +38,19 @@ module.exports = (sequelize, DataTypes) => {
         }
     );
 
+    Pedidos.associate = (models) => {
+        Pedidos.belongsToMany(
+            models.Pizzas,
+            {
+                as: "pizzas",
+                through: "pedido_pizza",
+                foreignKey: "pedido_id",
+                otherKey: "pizza_id",
+                timestamps: false
+            }
+        )
+    }
+
     return Pedidos;
 
 }
