@@ -6,6 +6,7 @@ const session = require('express-session');
 const bloqueiaForaDeHora = require('./middlewares/bloqueiaForaDeHora');
 const registraRequisicao = require('./middlewares/registraRequisicao');
 const router = require('./router');
+const routerApi = require('./routerApi');
 
 // 2 - Criar o servidor
 const servidor = express();
@@ -21,6 +22,7 @@ servidor.use(session({
 // Define a pasta public como sendo a pasta arquivos estáticos
 servidor.use(express.static(path.join(__dirname, 'public')));
 servidor.use(express.urlencoded({ extended: false }));
+servidor.use(express.json());
 
 // Configurando middlewares
 servidor.use(registraRequisicao);
@@ -40,6 +42,7 @@ servidor.use(
 )
 // 3 - Definir roteador a ser utilizado
 servidor.use(router);
+servidor.use('/api', routerApi);
 
 // 4 - Por o servidor no modo "aguardando requisição"
 servidor.listen(3000);
