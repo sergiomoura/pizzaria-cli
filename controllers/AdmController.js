@@ -93,6 +93,23 @@ const AdmController = {
         
         // redirecionar para /adm/pizzas (informando que deletou com sucesso)
         res.redirect('/adm/pizzas?msg=pizzaApagada');
+    },
+    atualizarPizza: async (req, res) => {
+
+        const idDaPizza = req.params.id;
+        let novoNome = req.body.nome.replace(' ', '-').toLowerCase() + '.jpg';
+        fs.renameSync(req.file.path, `public/img/${novoNome}`)
+        
+        const dados = {
+            nome: req.body.nome,
+            preco: req.body.preco,
+            ingredientes: req.body.ingredientes,
+            img: `/img/${novoNome}`,
+        }
+
+        await PizzasServices.alterarPizza(idDaPizza, dados);
+
+        res.redirect('/adm/pizzas');
     }
 
 }

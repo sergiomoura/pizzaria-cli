@@ -58,18 +58,16 @@ async function removerPizza(idDaPizza){
  * @param {number} idDaPizza 
  * @param {{nome: string, ingredientes:string[], preco:number, destaque: boolean}} dadosDaPizza 
  */
-function alterarPizza(idDaPizza, dadosDaPizza){
-    let pizza = pizzas.find(p => p.id == idDaPizza);
-    if(pizza == undefined){
+async function alterarPizza(idDaPizza, dadosDaPizza){
+
+    const pizza = await Pizzas.findByPk(idDaPizza);
+
+    if(pizza === undefined){
         throw new Error("Pizza inexistente");
-    }
+    };
 
-    pizza.nome = dadosDaPizza.nome;
-    pizza.ingredientes = dadosDaPizza.ingredientes;
-    pizza.preco = dadosDaPizza.preco;
-    pizza.destaque = dadosDaPizza.destaque;
-
-    salvar();
+    await pizza.update(dadosDaPizza);
+    pizza.setIngredientes(dadosDaPizza.ingredientes);
 
 }
 
