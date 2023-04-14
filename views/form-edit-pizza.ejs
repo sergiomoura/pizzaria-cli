@@ -62,6 +62,14 @@
         label img{
             width: 100%;
         }
+        .ingredientes-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .ingredientes-container label {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -74,25 +82,34 @@
         </ul>
     </nav>
     <main>
-        <form action="/adm/pizzas/store" method="post">
+        <form action="/adm/pizzas/store" method="post" enctype="multipart/form-data">
             <label>
                 Nome:
                 <input value="<%= pizza.nome %>" type="text" name="nome" id="nome" placeholder="Digite o nome da pizza">
             </label>
-    
-            <label>
-                Ingredientes:
-                <input type="text" name="ingredientes" id="ingredientes" placeholder="Ingredientes (separados por vírgula)">
-            </label>
+            <div>Ingredientes:</div>
+            <div class="ingredientes-container">
+                <% ingredientes.forEach(ingrediente => { %>
+                    <div>
+                        <input
+                            type="checkbox"
+                            name="ingredientes"
+                            <%= pizza.ingredientes.includes(ingrediente.id) ? 'checked' : '' %>
+                            value="<%= ingrediente.id %>"
+                            id="id_<%= ingrediente.id %>">
+                        <label for="id_<%= ingrediente.id %>"><%= ingrediente.nome %></label>
+                    </div>
+                <% }) %>
+            </div>
     
             <label>
                 Preço:
-                <input type="number" name="preco" id="preco" step="0.01" placeholder="Digite o preço da pizza">
+                <input value="<%= pizza.preco %>" type="number" name="preco" id="preco" step="0.01" placeholder="Digite o preço da pizza">
             </label>
     
             <label>
                 Foto:
-                <img src="/img/no-image.png">
+                <img id="imagem-da-pizza" src="<%= pizza.img %>">
                 <div>Clique para selecione nova imagem</div>
                 <input type="file" name="img" id="img">
             </label>
@@ -100,5 +117,14 @@
             <button type="submit">Salvar</button>
         </form>
     </main>
+    <script type="module">
+        
+        const elementoImg = document.getElementById('imagem-da-pizza');
+        const campoDoArquivo = document.getElementById('img');
+
+        import { mostrarArquivoSelecionadoNoElementoImg } from "/js/mostrarArquivoSelecionadoNoElementoImg.mjs";
+        mostrarArquivoSelecionadoNoElementoImg(campoDoArquivo, elementoImg);
+
+    </script>
 </body>
 </html>

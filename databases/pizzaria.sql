@@ -30,7 +30,7 @@ CREATE TABLE pizza_ingredientes (
 pizza_id INT(11) NOT NULL,
 ingrediente_id INT(11) NOT NULL,
 PRIMARY KEY (pizza_id, ingrediente_id),
-FOREIGN KEY (pizza_id) REFERENCES pizzas(id),
+FOREIGN KEY (pizza_id) REFERENCES pizzas(id) ON DELETE CASCADE,
 FOREIGN KEY (ingrediente_id) REFERENCES ingredientes(id)
 );
 

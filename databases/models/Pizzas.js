@@ -49,7 +49,8 @@ module.exports = (sequelize, DataTypes) => {
             through: "pizza_ingredientes",
             foreignKey: "pizza_id",
             otherKey: "ingrediente_id",
-            timestamps: false
+            timestamps: false,
+            onDelete: 'CASCADE'
         })
     }
 

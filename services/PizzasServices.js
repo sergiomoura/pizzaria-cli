@@ -1,4 +1,4 @@
-const { Pizzas } = require('../databases/models');
+const { Pizzas, Ingredientes } = require('../databases/models');
 
 const pizzas = require('../databases/pizzas.json');
 const fs = require('fs');
@@ -19,8 +19,8 @@ async function carregarPizzas(){
  * @returns {Pizza} 
  * @throws Emite erro caso não encontre nenhuma pizza com o id dado
  */
-function carregarPizza(idDaPizza){
-    let pizza = pizzas.find(p => p.id == idDaPizza);
+async function carregarPizza(idDaPizza){
+    let pizza = await Pizzas.findByPk(idDaPizza, {include:'ingredientes'});
     if(pizza == undefined){
         throw new Error("Pizza inexistente");
     }
@@ -43,13 +43,14 @@ async function adicionarPizza(pizza){
  * @param {number} idDaPizza
  * @throws Emite erro caso não exista pizza com o id passado
  */
-function removerPizza(idDaPizza){
-    let posicao = pizzas.findIndex(p => p.id == idDaPizza);
-    if(posicao == -1){
+async function removerPizza(idDaPizza){
+
+    let nLinhasRemovidas = await Pizzas.destroy({where: {id: idDaPizza}});
+
+    if(nLinhasRemovidas == 0){
         throw new Error("Pizza inexistente");
     }
-    pizzas.splice(posicao, 1);
-    salvar();
+    
 }
 
 /**
@@ -72,6 +73,14 @@ function alterarPizza(idDaPizza, dadosDaPizza){
 
 }
 
+async function carregarIngredientes(){
+
+    const ingredientes = await Ingredientes.findAll();
+    return ingredientes;
+
+}
+
+
 function salvar(){
     const caminhoParaArquivo = path.resolve(__dirname + "/../databases/pizzas.json");
     fs.writeFileSync(caminhoParaArquivo, JSON.stringify(pizzas, null, 4));
@@ -82,6 +91,7 @@ const PizzasServices = {
     carregarPizzas,
     adicionarPizza,
     removerPizza,
-    alterarPizza
+    alterarPizza,
+    carregarIngredientes
 }
 module.exports = PizzasServices;
