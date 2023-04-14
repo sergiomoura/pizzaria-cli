@@ -31,19 +31,11 @@ function carregarPizza(idDaPizza){
  * Adiciona uma pizza.
  * @param {Pizza} pizza 
  */
-function adicionarPizza(pizza){
-    // Criar um ID para a pizza
-    if(pizzas.length > 0){
-        pizza.id = pizzas[pizzas.length - 1].id + 1;
-    } else {
-        pizza.id = 1;
-    }
+async function adicionarPizza(pizza){
 
-    // Adicionar pizza ao array de pizzas
-    pizzas.push(pizza);
+    let pizzaCriada = await Pizzas.create(pizza);
+    pizzaCriada.setIngredientes(pizza.ingredientes);
 
-    // Salvar este array no arquivo pizzas.json
-    salvar();
 }
 
 /**

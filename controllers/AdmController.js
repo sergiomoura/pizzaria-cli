@@ -16,21 +16,21 @@ const AdmController = {
         ingredientes = await Ingredientes.findAll();
         res.render('form-add-pizza.ejs', {ingredientes});
     },
-    gravarPizza: (req, res) => {
+    gravarPizza: async (req, res) => {
+        
         let novoNome = req.body.nome.replace(' ', '-').toLowerCase() + '.jpg';
-        // let novoNome = `${Date.now()}-${req.file.originalname}`
         fs.renameSync(req.file.path, `public/img/${novoNome}`)
 
         let pizza = {
             nome: req.body.nome,
-            ingredientes: req.body.ingredientes.split(',').map(e => e.trim()),
+            ingredientes: req.body.ingredientes,
             preco: Number(req.body.preco),
             img: `/img/${novoNome}`,
             destaque: false,
             score: 0
         }
 
-        PizzasServices.adicionarPizza(pizza);
+        await PizzasServices.adicionarPizza(pizza);
 
         res.redirect('/adm/pizzas');
     },
